@@ -30,8 +30,23 @@ To model the 21-cm signal and the underlying astrophysics of heating and reioniz
 - X-ray energy threshold for self-absorption by the host galaxies $E_0$: The minimm energy that soft X-rays need in order to not be self absorbed by their host galaxy, approximated as a step function.
 - X-ray spectral index $\alpha _X$: x Governs the spectrum that emerges from the X-ray sources and depends on the dominant physical process emitting the X-ray photons.
 
+The simulation data is composed of 20,000 power spectra samples evaluated at ten different redshifts in range (25, 6). These samples are drawn randomly from the priors used that are described in the paper. We use 80% of the samples for training, 10% for validation, and 10% for the test dataset.
+
+### MNRE
+For this part, I defintely suggest taking a look at section 2 *"IMPLEMENTATION OF MNRE USING swyft"* from the paper, as they do a good job at explaining NRE. Very broadly, you start with Bayes' Theorem. Since we don't have the likelihood nor the evidence, we can define a new quantity, the ratio, as the ratio between these two as they appear in the theorem. This ratio $r(x, \theta)$ is equal to the ratio of the joint probability density $p(x, \theta)$ to the product of marginal probability densities $p(x) p(\theta)$. A binary classifier $d_\phi(x, \theta)$ is then trained to distinguish between jointly-drawn and marginally drawn pairs. Here $\phi$ denotes the learnable parameters of the model, which are updated as the model is trained. This learning problem is associated with a binary cross-entropy loss function. Therefore, one can train a neural network that uses this loss function to approximate the classifier $d_\phi(x, \theta)$. Given its construction, the ratio $r(x, \theta)$ can be written in terms of the classifier $d_\phi(x, \theta)$ (as shown in Eq 5 of the paper), giving us a way to use the trained classifier to do parameter inference. A variant called Marginal Neural Ratio Estimation (MNRE) that is able to directly estimate marginal posteriors by omitting model parameters from the network’s input is used, via its implementation in the *swyft* package.
+
 ## Results
+To test the performance of this approach, the authors create a mock observation. This model with {$\zeta$, $log_{10}(T^{min}_{vir})$, $R_{mfp}$, $log_{10}(L_X)$, $E_0$, $\alpha_X$} = {30, 4.70, 15, 40.5, 0.5, 1}. It corresponds to the FAINT GALAXIES model in which reionization is driven by numerous sources with low ionizing efficiency. This set of parameter values results in the reionization history and the Thomson optical depth $\tau$ consistent with Planck data.
+
+In Figure 3, you can see the posteriors on the astrophysical parameters obtained from swyft for the FAINT GALAXIES model assuming 1000h observation from the SKA. They are able to tightly constrain all our model parameters except αX, which has a relatively small impact on the amplitude of the 21-cm power spectra.
+
+In Figure 5 they show the same thing but this time separating the redshifts into two large bins, one coresponding to earlier times and the other to later times. The figure shows how, as you'd hopefully expect, later times better constrain the three parameters that are related to EoR, while the earlier times better constrain the parameters that more directly affect the EoH.
+
+While their worlk shows that MNRE is a powerful framework to analyse the 21-cm power spectrum, in reality, the 21-cm signal during CD-EoR is highly non-Gaussian, so the 21-cm power spectrum is probably not the most optimal summary statistics to use for parameter inference. In future work, one can explore the higher-order summary statistics such as the 21-cm bispectrum, the morphology of the ionized regions  and convolutional neural networks on the 21-cm tomographic images for parameter inference through MNRE. What this work does show is the advantage of using MNRE as it allows for higher dimensional parameter spaces to be explored for more complex models.
 
 
 ---
 # References
+
+- [[Likelihood-free MCMC with Amortized Approximate Ratio Estimators]]
+- [[On Contrastive Learning for Likelihood-free Inference]]
