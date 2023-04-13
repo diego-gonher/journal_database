@@ -1,11 +1,12 @@
 # Constraining the X-ray heating and reionization using 21-cm power spectra with Marginal Neural Ratio Estimation
 
-2023-04-13
-Authors: Anchal Saxena, Alex Cole, Simon Gazagnes, et al.
-Status: Read ✅
-Rating: ⭐️⭐️⭐️⭐️⭐️ 
-Tags: [[SBI]] [[EoR]] [[21cm]]
-Arxiv: https://arxiv.org/pdf/2303.07339.pdf
+- Date Read: 2023-04-13
+- Date Published: 2023-03-14
+- Authors: Anchal Saxena, Alex Cole, Simon Gazagnes, et al.
+- Status: Read ✅
+- Rating: ⭐️⭐️⭐️⭐️⭐️ 
+- Tags: [[SBI]] [[EoR]] [[21cm]]
+- Arxiv: https://arxiv.org/pdf/2303.07339.pdf
 
 ---
 # Abstract

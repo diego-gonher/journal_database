@@ -1,11 +1,12 @@
 # {{Title}}
 
-{{date}}
-Authors: 
-Status: reading
-Rating: ⭐️⭐️⭐️⭐️⭐️ 
-Tags:
-Arxiv: 
+- Date Read: {{date}}
+- Date Published:
+- Authors: 
+- Status: reading
+- Rating: ⭐️⭐️⭐️⭐️⭐️ 
+- Tags:
+- Arxiv: 
 
 ---
 # Abstract
