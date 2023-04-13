@@ -3,6 +3,7 @@
 {{date}}
 Authors: 
 Status: reading
+Rating: ⭐️⭐️⭐️⭐️⭐️ 
 Tags:
 Arxiv: 
 
