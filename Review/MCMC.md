@@ -18,6 +18,7 @@ A simple model that allows us to explore the behavior within a system that has a
 ---
 
 ## Markov Chain Stationary Distribution
+This is an extension of the idea of **steady state** for a Markov Chain. The idea here is that, for a given Markov Chain, you may have a probability distribution $\vec{\pi} = \{\pi_A, \pi_B, \pi_C, \dots\}$ (which describes the probability of the Markov Chain of being in a specif state at any given step) that stays unchanged, no matter how many forward steps you take. Such distribution is known as the stationary distribution of the chain. Written in terms of Linear Algebra, and using the definition of the Transition Matrix, the stationary distribution is the left eigenvector of the Transition Matrix with eigenvalue 1. It is important to know that stationary distributions are not necessarily unique for a given Markov Chain.
 
 🎥   https://www.youtube.com/watch?v=4sXiCxZDrTU&ab_channel=ritvikmath
 
