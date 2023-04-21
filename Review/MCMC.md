@@ -34,9 +34,19 @@ More specifically, MCMC methods treat the sampling process of Rejection sampling
 ---
 
 ## Metropolis - Hastings
+The Metropolis-Hastings algorithm is a clever way of doing MCMC. The way it works is by:
 
+- Start at a position $a$. 
+- Propose a new position $b$ for your next step in the Markov Chain. The proability of choosing $b$ depends on a distribution, say a Gaussian, that is centered around $a$ (hence the "correlated" steps proper of MCMC methods).
+- We accept the new position $b$ for our next step in the chain with an acceptance probability $A(a\rightarrow b) = min(1, r_f r_g)$, where $r_f = f(b)/f(a)$ and $r_g = g(a|b)/g(b|a)$. Here, the distribution function we are trying to approximate is given by $p(x) = f(x)/NC$, and $g$ is the probability distribution used to produce samples from Rejection Sampling. This definition for the acceptance probability obeys detailed balance, and thus conduces the Markov Chain to a Stationary Distribution that approximates $p(x)$. If the new sample is accepted, then it is used for the next step in the chain. If not, the next step in the chain uses the same sample as in the previous step.
+- Iterate this over, and over again.
+
+This video is really good at explaining how the algorithm works:
 🎥   https://www.youtube.com/watch?v=yCv2N7wGDCw&ab_channel=ritvikmath
-https://www.youtube.com/watch?v=OTO1DygELpY&ab_channel=StataCorpLLC
+
+And this other video has a nice summary plus a cool visualization of the algorithm. For the case of posterior approximation, this method works perfectly because the posterior is proportional to the prior times the likelihood, over the evidence of the model (which constantly is difficult to actually calculate, but effectively is a normalizing constant). As such, $f(x)$ simply becomes the product of your likelihood and your prior!
+
+🎥   https://www.youtube.com/watch?v=OTO1DygELpY&ab_channel=StataCorpLLC
 
 ---
 
