@@ -25,6 +25,9 @@ This is an extension of the idea of **steady state** for a Markov Chain. The ide
 ---
 
 ## Markov Chain Monte Carlo
+MCMC is, in a way, a more efficient sampling method than Accept-Reject sampling. The idea of Rejection Sampling is relatively simple, yet powerful. However, it tends to be very efficient since every new sample is totally uncorrelated from the previous ones. MCMC methods instead try to be more efficient by using the probability that a given sample (for a given state) will be accepted to know if it should keep sampling nearby. The idea is that if a new sample has an unusually high probability of being accepted, then it might be a good idea to spend some time exploring the neighborhood around it, as it might be a mode within the distribution.
+
+More specifically, MCMC methods treat the sampling process of Rejection sampling as a Markov Chain, where the state used for the next sample depends on the current state and its sample. The algorithms themselves are designed such that the Markov Chain will eventually reach a steady state with a Stationary Distribution that is the same as the target (underlying) distribution that we are trying to approximate. This involves thinking about how to set our probability matrix to make this happen, and it uses the principle of Detailed Balance, which is closely related to a Stationary Distribution being a left eigenvector of the Transition Matrix.
 
 🎥   https://www.youtube.com/watch?v=yApmR-c_hKU&ab_channel=ritvikmath
 
@@ -34,3 +37,10 @@ This is an extension of the idea of **steady state** for a Markov Chain. The ide
 
 🎥   https://www.youtube.com/watch?v=yCv2N7wGDCw&ab_channel=ritvikmath
 https://www.youtube.com/watch?v=OTO1DygELpY&ab_channel=StataCorpLLC
+
+---
+
+## Hamiltonian Monte Carlo
+
+🎥   https://www.youtube.com/watch?v=a-wydhEuAm0&ab_channel=BenLambert
+📄   https://arxiv.org/pdf/1701.02434.pdf
