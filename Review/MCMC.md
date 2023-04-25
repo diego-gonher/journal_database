@@ -52,5 +52,15 @@ And this other video has a nice summary plus a cool visualization of the algorit
 
 ## Hamiltonian Monte Carlo
 
+This is a very ingenous way of doing posterior distribution estimation, where the main idea is that your posterior, which is proportional to the likelihood times the prior, becomes a potential energy function by taking the negative log of such posterior. Then, instead of having a random walker (which is what MCMC basically does), you have a guided trajectory. In very surface-level words, the algorithm follows a similar procedure to Metropolis-Hastings, but specifically it also does the following:
+
+- Take a random momentum vector for your particle.
+- Use this momentum vector to calculate a "kinetic energy", and add that to the "potential energy" which comes from the negative log of the prior times the likelihood.
+- Use Hamiltonian mechanics to follow the path of this particle. For this part, you'd need to do a numerical integration, which is generally done with a leap-frog integrator. This is why you need a derivative for your negative log.
+- After the path is integrated for a set number of steps, propose a new momentum vector. Accept it or reject it. You can see the acceptance rules in the video below.
+
+The following video is extremely good at explaining the idea behind it, as well as having a great visualization of the algorithm:
 🎥   https://www.youtube.com/watch?v=a-wydhEuAm0&ab_channel=BenLambert
+
+And this is a sort of review paper that the author of the video suggests
 📄   https://arxiv.org/pdf/1701.02434.pdf
