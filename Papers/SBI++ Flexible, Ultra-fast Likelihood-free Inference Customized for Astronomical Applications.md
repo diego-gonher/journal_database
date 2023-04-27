@@ -3,7 +3,7 @@
 - Date Read: 2023-04-17
 - Date Published: 2023-01-12
 - Authors: Bingjie Wang, Joel Leja, V. Ashley Villar, et al.
-- Status: read
+- Status: Read ✅
 - Rating: ⭐️⭐️⭐️⭐️⭐️ 
 - Tags: [[SBI]] [[Redshift Estimation]] [[SED fitting]]
 - Arxiv: https://arxiv.org/pdf/2304.05281.pdf
@@ -48,7 +48,7 @@ Lastly, it is important to also note that the introduction of MC samples introdu
 ## Results
 Figure 2 shows the overall approach of SBI++ and how it compares to NS and the baseline SBI. As we can see, SBI++ seems to closely match the standard results from NS in handling missing data, and it seems to work better than traditional SBI in handling OOD measurement errors. They also apply this to observed JWST data, but I didn't have time to get into that, so refer to Section 5 of the paper for more details. Also a detailed interpretation of the results and a comparison with traditional NS can be found in section 6 of the paper, which I highly reccomend if you're curious about it.
 
-
+> **NOTES:** A little complicated to read/understand, but I think their ideas on how to handle missing data are quite interesting and perhaps useful.
 
 ---
 # References

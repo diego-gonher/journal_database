@@ -48,6 +48,7 @@ In Figure 5 they show the same thing but this time separating the redshifts into
 
 While their worlk shows that MNRE is a powerful framework to analyse the 21-cm power spectrum, in reality, the 21-cm signal during CD-EoR is highly non-Gaussian, so the 21-cm power spectrum is probably not the most optimal summary statistics to use for parameter inference. In future work, one can explore the higher-order summary statistics such as the 21-cm bispectrum, the morphology of the ionized regions  and convolutional neural networks on the 21-cm tomographic images for parameter inference through MNRE. What this work does show is the advantage of using MNRE as it allows for higher dimensional parameter spaces to be explored for more complex models.
 
+> **NOTES:** This is a really good paper that describes the idea behind Neural Ratio Estimation.
 
 ---
 # References
