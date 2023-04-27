@@ -41,7 +41,7 @@ To evaluate their results, they compute the power spectrum and bispectrum of the
 In this scenario, the NN and the RF perform the best in the power spectrum for the different redshifts evaluated. The power spectrum is well predicted to a few percent accuracy, though the bispectrum predictions are somewhat worse.
 
 ### Two-parameter
-Surprisingly, here 
+Surprisingly, here SVMs work the best. Look in the actual paper if you're interested.
 
 
 > **NOTES:** Honestly, the paper and the results weren't that interesting. However, the idea of doing dimensionality reduction before supervised ML was interesting.
